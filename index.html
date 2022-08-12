@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Porfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <!-- Navbar -->
+    <nav class="nav" id="navbar">
+        <div class="container flex">
+            <a href="#home" class="logo mark scroll-trigger">Billy3Joe</a>
+            <div class="nav_right">
+                <a href="#home" class="nav_link scroll-trigger">Accueil</a>
+                <a href="#realisations" class="nav_link scroll-trigger">Réalisations</a>
+                <a href="#service" class="nav_link scroll-trigger">Service</a>
+                <a href="#about" class="nav_link scroll-trigger">A propos</a>
+                <a href="#contact" class="nav_link scroll-trigger">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="showcase" id="home">
+        <div class="content">
+            <h3 class="showcase_title">Développeur <span class="mark">Full-Stack</span></h3>
+            <p class="showcase_caption">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum modi voluptatum nam voluptatem repudiandae temporibus incidunt libero sit qui in.
+            </p>
+            <a href="#about" class="get_started scroll-trigger">Get Started</a>
+        </div>
+    </header>
+    <!-- About -->
+    <section class="about_us" id="about">
+        <div class="container">
+            <h3 class="section_title">About us</h3>
+            <p class="about_caption">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint mollitia autem fugiat, non vero.
+            </p>
+        </div>
+    </section>
+    <!-- Services -->
+    <section class="services" id="service">
+        <h3 class="section_title">Services</h3>
+        <!-- bg -->
+        <div class="services_bg">
+            <div class="content">
+                <h3 class="service_bg_title">Lorem Ipsum</h3>
+                <p class="service_bg_caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque nihil reprehenderit atque autem facere eius.
+                </p>
+            </div>
+        </div>
+        <!-- Cards -->
+        <div class="card_bg" id="realisations">
+            <div class="container">
+                <ul class="cover_cards">
+                    <li class="cards card_1">
+                        <img src="images/hetic.png" class="img-responsive" />
+                        <div class="card_content">
+                            <h3 class="card_title">Lorem Ipsum</h3>
+                            <p class="card_caption">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti temporibus doloremque animi aspernatur pariatur facilis minus. Adipisci corporis hic aperiam.
+                            </p>
+                            <button class="get_started for_card">More..</button>
+                        </div>
+
+                    </li>
+                    <li class="cards card_2">
+                        <img src="images/todoliste.png" class="img-responsive" />
+                        <div class="card_content">
+                            <h3 class="card_title">Lorem Ipsum</h3>
+                            <p class="card_caption">
+                                Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore
+                            </p>
+                            <button class="get_started for_card">More..</button>
+                        </div>
+
+                    </li>
+                    <li class="cards card_3">
+                        <img src="images/lino_maker.png" class="img-responsive" />
+                        <div class="card_content">
+                            <h3 class="card_title">Lorem Ipsum</h3>
+                            <p class="card_caption">
+                                Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore
+                            </p>
+                            <button class="get_started for_card">More..</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container flex">
+            <p class="copyright_text">&copy; Copyright <span class="mark"> Billy3Joe</span>. All Rights Reserved</p>
+            <p class="designedby">Designed by <span class="mark">Billy3Joe</span></p>
+        </div>
+    </footer>
+
+    <script>
+        (function($) {
+            "user strict";
+            // For Navbar Scroll
+            Navbar = function() {
+                if ($("#navbar").offset().top > 100) {
+                    $("#navbar").addClass("navbar_shrink");
+                } else {
+                    $("#navbar").removeClass("navbar_shrink");
+                }
+            }
+            Navbar();
+            $(window).scroll(Navbar);
+
+            // Smooth scrolling using jQuery easing
+            $('a.scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: (target.offset().top - 71)
+                        }, 1000, "easeInOutExpo");
+                        return false;
+                    }
+                }
+            });
+
+
+        })(jQuery);
+    </script>
+</body>
+
+</html>
